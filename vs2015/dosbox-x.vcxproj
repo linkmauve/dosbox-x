@@ -352,7 +352,14 @@ copy "$(SolutionDir)\..\dosbox-x.reference.conf" "$(OutputPath)\dosbox-x.referen
 copy "$(SolutionDir)\..\CHANGELOG" "$(OutputPath)\changelog.txt"
 mkdir "$(OutputPath)\shaders"
 copy "$(SolutionDir)\..\contrib\shaders\*.*" "$(OutputPath)\shaders\"
-copy "$(SolutionDir)\fluidsynth\win32\*.dll" "$(OutputPath)\"</Command>
+copy "$(SolutionDir)\fluidsynth\win32\*.dll" "$(OutputPath)\"
+
+echo Copying translation files...
+for /r "$(SolutionDir)..\translations" %%M in (*.mo) do (
+    echo f | xcopy /y "%%~M" "$(OutputPath)%%~nM\LC_MESSAGES\dosbox-x.mo"
+)
+
+</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>
