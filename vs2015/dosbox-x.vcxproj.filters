@@ -1762,6 +1762,7 @@
       <Filter>Sources\hardware\serialport</Filter>
     </ClInclude>
     <ClInclude Include="..\src\hardware\opl2board\opl2board.h" />
+    <ClInclude Include="..\src\localization.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\src\winres.rc">

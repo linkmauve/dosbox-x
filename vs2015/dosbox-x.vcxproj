@@ -1368,6 +1368,7 @@ copy "$(SolutionDir)\..\contrib\shaders\*.*" "$(OutputPath)\shaders\"</Command>
     <ClInclude Include="..\src\hardware\voodoo_vogl.h" />
     <ClInclude Include="..\src\ints\int10.h" />
     <ClInclude Include="..\src\ints\xms.h" />
+    <ClInclude Include="..\src\localization.h" />
     <ClInclude Include="..\src\mt32\AReverbModel.h" />
     <ClInclude Include="..\src\mt32\BReverbModel.h" />
     <ClInclude Include="..\src\mt32\DelayReverb.h" />
