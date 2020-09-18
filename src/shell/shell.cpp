@@ -44,6 +44,8 @@
 #endif
 #include "build_timestamp.h"
 
+#include "localization.h"
+
 static bool first_run=true;
 extern bool use_quick_reboot, mountwarning;
 extern bool startcmd, startwait, winautorun;
@@ -975,25 +977,25 @@ void SHELL_Init() {
                                     "  /F:         Switch back to DOSBox-X internal time (opposite of /S)\n"\
 									"  /T:         Only display date\n"\
 									"  /H:         Synchronize with host\n");
-	MSG_Add("SHELL_CMD_TIME_HELP","Displays or changes the internal time.\n");
-	MSG_Add("SHELL_CMD_TIME_ERROR","The specified time is not correct.\n");
-	MSG_Add("SHELL_CMD_TIME_NOW","Current time: ");
-	MSG_Add("SHELL_CMD_TIME_SETHLP","Type 'time %s' to change.\n");
+	MSG_Add("SHELL_CMD_TIME_HELP",Tr("Displays or changes the internal time.\n"));
+	MSG_Add("SHELL_CMD_TIME_ERROR",Tr("The specified time is not correct.\n"));
+	MSG_Add("SHELL_CMD_TIME_NOW",Tr("Current time: "));
+	MSG_Add("SHELL_CMD_TIME_SETHLP",Tr("Type 'time %s' to change.\n"));
 	MSG_Add("SHELL_CMD_TIME_HELP_LONG","TIME [[/T] [/H] | time]\n"\
-									"  time:       New time to set\n"\
-									"  /T:         Display simple time\n"\
-									"  /H:         Synchronize with host\n");
-	MSG_Add("SHELL_CMD_MKDIR_ERROR","Unable to make: %s.\n");
-	MSG_Add("SHELL_CMD_RMDIR_ERROR","Unable to remove: %s.\n");
-    MSG_Add("SHELL_CMD_RENAME_ERROR","Unable to rename: %s.\n");
-	MSG_Add("SHELL_CMD_ATTRIB_GET_ERROR","Unable to get attributes: %s\n");
-	MSG_Add("SHELL_CMD_ATTRIB_SET_ERROR","Unable to set attributes: %s\n");
-	MSG_Add("SHELL_CMD_DEL_ERROR","Unable to delete: %s.\n");
-	MSG_Add("SHELL_CMD_DEL_SURE","All files in directory will be deleted!\nAre you sure [Y/N]?");
-	MSG_Add("SHELL_SYNTAXERROR","The syntax of the command is incorrect.\n");
-	MSG_Add("SHELL_CMD_SET_NOT_SET","Environment variable %s not defined.\n");
-	MSG_Add("SHELL_CMD_SET_OUT_OF_SPACE","Not enough environment space left.\n");
-	MSG_Add("SHELL_CMD_IF_EXIST_MISSING_FILENAME","IF EXIST: Missing filename.\n");
+									"  time:       ""New time to set\n"\
+									"  /T:         ""Display simple time\n"\
+									"  /H:         ""Synchronize with host\n");
+	MSG_Add("SHELL_CMD_MKDIR_ERROR",Tr("Unable to make: %s.\n"));
+	MSG_Add("SHELL_CMD_RMDIR_ERROR",Tr("Unable to remove: %s.\n"));
+    MSG_Add("SHELL_CMD_RENAME_ERROR",Tr("Unable to rename: %s.\n"));
+	MSG_Add("SHELL_CMD_ATTRIB_GET_ERROR",Tr("Unable to get attributes: %s\n"));
+	MSG_Add("SHELL_CMD_ATTRIB_SET_ERROR",Tr("Unable to set attributes: %s\n"));
+	MSG_Add("SHELL_CMD_DEL_ERROR",Tr("Unable to delete: %s.\n"));
+	MSG_Add("SHELL_CMD_DEL_SURE",Tr("All files in directory will be deleted!\nAre you sure [Y/N]?"));
+	MSG_Add("SHELL_SYNTAXERROR",Tr("The syntax of the command is incorrect.\n"));
+	MSG_Add("SHELL_CMD_SET_NOT_SET",Tr("Environment variable %s not defined.\n"));
+	MSG_Add("SHELL_CMD_SET_OUT_OF_SPACE",Tr("Not enough environment space left.\n"));
+	MSG_Add("SHELL_CMD_IF_EXIST_MISSING_FILENAME","IF EXIST: ""Missing filename.\n");
 	MSG_Add("SHELL_CMD_IF_ERRORLEVEL_MISSING_NUMBER","IF ERRORLEVEL: Missing number.\n");
 	MSG_Add("SHELL_CMD_IF_ERRORLEVEL_INVALID_NUMBER","IF ERRORLEVEL: Invalid number.\n");
 	MSG_Add("SHELL_CMD_GOTO_MISSING_LABEL","No label supplied to GOTO command.\n");
