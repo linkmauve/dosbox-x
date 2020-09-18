@@ -8454,9 +8454,41 @@ bool custom_bios = false;
 #define SDL_MAIN_NOEXCEPT
 #endif
 
+#include <libintl.h>
+#include <locale.h>
+
+void InitLocalization()
+{
+    const char *directoryName;
+
+#if WIN32
+    TCHAR temp[MAX_PATH] = { 0 };
+    GetModuleFileName(nullptr, temp, MAX_PATH);
+    auto str = std::string(temp);
+    auto pos = str.find_last_of("\\");
+    auto sub = str.substr(0, pos);
+    directoryName = sub.c_str();
+#else
+    // TODO executable's directory
+#endif
+
+    setlocale(LC_ALL, "");
+    const char* domainName = "dosbox-x";
+    bindtextdomain(domainName, directoryName);
+    textdomain(domainName);
+}
+
+void FreeLocalization()
+{
+    // TODO
+}
+
 //extern void UI_Init(void);
 void grGlideShutdown(void);
 int main(int argc, char* argv[]) SDL_MAIN_NOEXCEPT {
+
+    InitLocalization();
+
     CommandLine com_line(argc,argv);
     Config myconf(&com_line);
 
